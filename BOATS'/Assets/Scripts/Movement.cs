@@ -2,41 +2,59 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour {
+public class Movement : MonoBehaviour
+{
 
-    // Use this for initialization
-    public float moveSpeed=3.0f;
+    public GameObject grabPoint;
     private Rigidbody myBody;
+    float moveSpeed = 6.0f;
+
     [SerializeField]
     private GameObject canonBall;
-	void Start () {
-        myBody=GetComponent<Rigidbody>();
+    private Vector3 lastRotation;
+    bool hasBall = false;
 
+    void Start()
+    {
+        myBody = GetComponent<Rigidbody>();
+        lastRotation = this.transform.forward;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    void Update()
+    {
+        RotatePlayer();
 
         myBody.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, myBody.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
 
-        if (Input.GetKey("space")&&canonBall!=null)
+        if (Input.GetKeyDown("space") && canonBall != null)
         {
-            moveSpeed = 3.0f;
-            //parentcannonball
- 
-        }
-        else
-        {
-            moveSpeed = 10.0f;
-            //need a current movespeeed,maxspeed and slowspeed variable to avoid hardcoding
-
-            if(canonBall!=null)
+            if (hasBall == false)
             {
-                canonBall = null;
+                moveSpeed = 3.0f;
+                canonBall.transform.position = grabPoint.transform.position;
+                canonBall.transform.parent = grabPoint.transform;
+                hasBall = true;
+            }
+            else
+            {
+                moveSpeed = 6.0f;
+                canonBall.transform.parent = null;
+                canonBall = null;///////////////////////
+                hasBall = false;
             }
         }
-
     }
+
+    void RotatePlayer()
+    {
+        this.transform.forward = myBody.velocity;
+        if (myBody.velocity.magnitude < 1.0f)
+        {
+            this.transform.forward = lastRotation;
+        }
+        lastRotation = transform.forward;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "ball")
@@ -45,4 +63,12 @@ public class Movement : MonoBehaviour {
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "ball")
+        {
+            canonBall.transform.parent = null;
+            canonBall = null;
+        }
+    }
 }
