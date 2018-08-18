@@ -29,6 +29,10 @@ public class ObjectPool : MonoBehaviour
             {
                 GameObject temp = AvailableObjects[i];
                 temp.SetActive(true);
+                if(temp.GetComponent<Rigidbody>() == true)
+                {
+                    temp.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                }
                 ActiveObjects.Add(temp);
                 AvailableObjects.Remove(temp);
                 return temp;
@@ -59,6 +63,10 @@ public class ObjectPool : MonoBehaviour
         {
             GameObject temp;
             temp = Instantiate(gameObj);
+            if (temp.GetComponent<Rigidbody>() == true)
+            {
+                temp.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            }
             temp.SetActive(false);
             AvailableObjects.Add(temp);
         }
