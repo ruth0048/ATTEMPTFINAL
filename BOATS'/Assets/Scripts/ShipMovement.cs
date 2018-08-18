@@ -25,6 +25,7 @@ public class ShipMovement : MonoBehaviour {
     public Vector3 StartPosition;
 
     public bool Patrol;
+    public bool UseRotation;
 
     void Start ()
     {
@@ -38,7 +39,6 @@ public class ShipMovement : MonoBehaviour {
         IdleTimer = IdleTime;
         StuckTimer = IdleTimer + 1.0f;
 
-        Patrol = true;
     }
 
     // Update is called once per frame
@@ -51,13 +51,22 @@ public class ShipMovement : MonoBehaviour {
     {
         if (!this.Idle)
         {
-            //have ai turn to its destination, and have it move towards it
-            TurnToDestination(this.transform.position, CurrentDestination);
-
-            if (Vector3.Distance(transform.forward, (CurrentDestination - transform.localPosition).normalized) < DistanceBetweenAngles || this.CurvedTurns)
+            if (UseRotation)
             {
-                transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+                //have ai turn to its destination, and have it move towards it
+                TurnToDestination(this.transform.position, CurrentDestination);
+
+                if (Vector3.Distance(transform.forward, (CurrentDestination - transform.localPosition).normalized) < DistanceBetweenAngles || this.CurvedTurns)
+                {
+                    transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+                }
             }
+            else
+            {
+                Vector3 moveVector = (CurrentDestination - transform.position).normalized * MoveSpeed * Time.deltaTime;
+                transform.position += moveVector;
+            }
+
         }
 
         if (this.Idle)

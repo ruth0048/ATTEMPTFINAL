@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MeshGeneneration : MonoBehaviour {
 
+    public GameObject objectToFollow;
     public GameObject water;
     public List<GameObject> waterPieces;
 
@@ -27,6 +28,7 @@ public class MeshGeneneration : MonoBehaviour {
                 float xPlane = (i * temp.GetComponent<MeshRenderer>().bounds.size.z) + temp.transform.position.z;
                 float zPlane = (j * temp.GetComponent<MeshRenderer>().bounds.size.x) + temp.transform.position.x;
                 waterPieces[index].transform.position = new Vector3(xPlane, water.transform.position.y, zPlane);
+                waterPieces[index].transform.parent = objectToFollow.transform;
                 index++;
             }
         }
