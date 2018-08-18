@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
 
     public GameObject grabPoint;
     private Rigidbody myBody;
-    float moveSpeed = 3.0f;
+    float moveSpeed = 2.0f;
 
     [SerializeField]
     private GameObject canonBall;
@@ -30,16 +30,19 @@ public class Movement : MonoBehaviour
         {
             if (hasBall == false)
             {
-                moveSpeed = moveSpeed * 0.5f;
+                moveSpeed = 1.5f;
                 canonBall.transform.position = grabPoint.transform.position;
+                canonBall.GetComponent<Rigidbody>().isKinematic = true;
                 canonBall.transform.parent = grabPoint.transform;
                 hasBall = true;
             }
             else
             {
-                moveSpeed = 3.0f;
+                moveSpeed = 2.5f;
                 canonBall.transform.parent = null;
-                canonBall = null;///////////////////////
+                canonBall.GetComponent<Rigidbody>().isKinematic = false;
+                canonBall.GetComponent<Rigidbody>().AddForce(new Vector3(this.transform.forward.x, this.transform.forward.y + 3.0f, this.transform.forward.z), ForceMode.Impulse);
+                canonBall = null;
                 hasBall = false;
             }
         }
@@ -47,19 +50,18 @@ public class Movement : MonoBehaviour
 
     void RotatePlayer()
     {
+        //will force the player to look forward if not moving. 
         this.transform.forward = myBody.velocity;
-        if (myBody.velocity.magnitude < 1.0f)
-        {
-            this.transform.forward = lastRotation;
-        }
-        lastRotation = transform.forward;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "ball")
         {
-            canonBall = other.gameObject;
+            if (hasBall == false)
+            {
+                canonBall = other.gameObject;
+            }
         }
     }
 
@@ -69,7 +71,6 @@ public class Movement : MonoBehaviour
         {
             if (hasBall == false)
             {
-                canonBall.transform.parent = null;
                 canonBall = null;
             }
         }
