@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
     private GameObject canonBall;
     private Vector3 lastRotation;
     bool hasBall = false;
+    bool MovementIsHappening = false;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        //MovementChecker();
         RotatePlayer();
 
         myBody.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, myBody.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
@@ -48,15 +50,35 @@ public class Movement : MonoBehaviour
         }
     }
 
+    void MovementChecker()
+    {
+        //if (Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.S)|| Input.GetKeyDown(KeyCode.D)|| Input.GetKeyDown(KeyCode.A))
+        //{
+        //    MovementIsHappening = true;
+        //}
+        //else
+        //{
+        //    MovementIsHappening = false;
+        //}
+    }
     void RotatePlayer()
     {
+        float val = 0.1f;
+        float nVal = -0.1f;
+        if (myBody.velocity.x < val && myBody.velocity.y < val && myBody.velocity.z < val
+            && myBody.velocity.x > nVal && myBody.velocity.y > nVal && myBody.velocity.z > nVal)
+        {
+            return;
+        }
+
         //will force the player to look forward if not moving. 
+        //if(MovementIsHappening)
         this.transform.forward = myBody.velocity;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "ball")
+        if (other.tag == "ball"&&canonBall==null)
         {
             if (hasBall == false)
             {
