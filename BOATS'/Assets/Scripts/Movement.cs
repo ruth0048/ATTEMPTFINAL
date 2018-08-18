@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
 
     public GameObject grabPoint;
     private Rigidbody myBody;
-    float moveSpeed = 6.0f;
+    float moveSpeed = 3.0f;
 
     [SerializeField]
     private GameObject canonBall;
@@ -30,14 +30,14 @@ public class Movement : MonoBehaviour
         {
             if (hasBall == false)
             {
-                moveSpeed = 3.0f;
+                moveSpeed = moveSpeed * 0.5f;
                 canonBall.transform.position = grabPoint.transform.position;
                 canonBall.transform.parent = grabPoint.transform;
                 hasBall = true;
             }
             else
             {
-                moveSpeed = 6.0f;
+                moveSpeed = 3.0f;
                 canonBall.transform.parent = null;
                 canonBall = null;///////////////////////
                 hasBall = false;
@@ -67,8 +67,11 @@ public class Movement : MonoBehaviour
     {
         if (other.tag == "ball")
         {
-            canonBall.transform.parent = null;
-            canonBall = null;
+            if (hasBall == false)
+            {
+                canonBall.transform.parent = null;
+                canonBall = null;
+            }
         }
     }
 }
