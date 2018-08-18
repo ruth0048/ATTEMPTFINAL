@@ -65,15 +65,22 @@ public class Movement : MonoBehaviour
     {
         float val = 0.1f;
         float nVal = -0.1f;
-        if (myBody.velocity.x < val && myBody.velocity.y < val && myBody.velocity.z < val
-            && myBody.velocity.x > nVal && myBody.velocity.y > nVal && myBody.velocity.z > nVal)
+        if (myBody.velocity.x <  val && myBody.velocity.z < val
+            && myBody.velocity.x > nVal && myBody.velocity.z > nVal)
         {
             return;
         }
 
         //will force the player to look forward if not moving. 
         //if(MovementIsHappening)
+
+        //moveDir.y = 0.0f;
+        //this.transform.forward = moveDir;
+        myBody.velocity = new Vector3(myBody.velocity.x, 0.0f, myBody.velocity.z);
         this.transform.forward = myBody.velocity;
+
+/////////////////////////////////////////////////////////////////////////////
+
     }
 
     private void OnTriggerEnter(Collider other)

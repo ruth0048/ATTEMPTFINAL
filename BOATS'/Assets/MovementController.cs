@@ -25,7 +25,7 @@ public class MovementController : MonoBehaviour {
 
         moveDir = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, 0.0f, Input.GetAxis("Vertical") * moveSpeed);
 
-        moveDir.y = moveDir.y + (Physics.gravity.y);//* Time.deltaTime
+       moveDir.y = moveDir.y + (Physics.gravity.y*mass);//* Time.deltaTime
 
         myController.Move(moveDir*Time.deltaTime);
 
