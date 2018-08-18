@@ -31,7 +31,6 @@ public class ObjectPool : MonoBehaviour
                 temp.SetActive(true);
                 ActiveObjects.Add(temp);
                 AvailableObjects.Remove(temp);
-
                 return temp;
             }
         }

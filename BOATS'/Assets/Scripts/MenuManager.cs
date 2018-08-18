@@ -5,13 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
-
     public GameObject playButton;
     public GameObject exitButton;
     public GameObject creditsButton;
     public GameObject controlsButton;
-
-
 
 	void Start () {
 		
