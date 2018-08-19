@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WinChecker : MonoBehaviour {
-    public GameObject blackOut;
+    public GameObject win;
+    private AudioManager myAudio;
     //private bool win = false;
     private void Awake()
     {
-        //FindObjectOfType<Camera>().Get
+        myAudio = FindObjectOfType<AudioManager>();
     }
 
     //private void Update()
@@ -21,7 +22,9 @@ public class WinChecker : MonoBehaviour {
     {
         if(other.gameObject.tag=="boat")
         {
-            //win = true;
+            myAudio.Stop("Music");
+            myAudio.Play("Win");
+            win.gameObject.GetComponent<GameMenuManager>().onWin();
             Debug.LogWarning("WIN");
         }
     }

@@ -12,9 +12,11 @@ public class GameOverChecker : MonoBehaviour {
     private bool startCountDown = false;
     public GameObject canonSpawner;
     private bool canSpawn = true;
-	void Start () {
-		
-	}
+    public GameObject lose;
+    private AudioManager myAudio;
+    void Start () {
+        myAudio = FindObjectOfType<AudioManager>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -47,6 +49,9 @@ public class GameOverChecker : MonoBehaviour {
             if (deathTimer > gracePeriod)
             {
                 Debug.LogWarning("GameOver");
+                myAudio.Stop("Music");
+                myAudio.Play("Lose");
+                lose.GetComponent<GameMenuManager>().onLose();
             }
         }
     }

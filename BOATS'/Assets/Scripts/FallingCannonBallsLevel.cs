@@ -13,6 +13,7 @@ public class FallingCannonBallsLevel : MonoBehaviour
 
     float difficultyTime;
     int difficulty;
+    AudioManager myAudio;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class FallingCannonBallsLevel : MonoBehaviour
         difficulty = 1;
         //starting difficulty time
         difficultyTime = 6.0f;
+        myAudio = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -38,6 +40,7 @@ public class FallingCannonBallsLevel : MonoBehaviour
 
             cannonBalls.GetAvailableObject().transform.position = new Vector3(randXpos, this.transform.position.y, randZPos);
             frequency = frequencyTimer;
+            myAudio.Play("Shoot");
         }
     }
 
@@ -47,6 +50,7 @@ public class FallingCannonBallsLevel : MonoBehaviour
         float randZPos = Random.Range(this.transform.position.z - RangeZ, this.transform.position.z + RangeZ);
 
         cannonBalls.GetAvailableObject().transform.position = new Vector3(randXpos, this.transform.position.y, randZPos);
+        myAudio.Play("Shoot");
     }
 
     void CheckDifficulty()
