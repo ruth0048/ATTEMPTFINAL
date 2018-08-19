@@ -49,6 +49,7 @@ public class AudioManager : MonoBehaviour {
                 if (!sounds[b].source.isPlaying)
                 {
                     sounds[b].source.clip = s.source.clip;
+                    sounds[b].source.volume = s.source.volume;
                     sounds[b].source.Play();
                     return;
                 }

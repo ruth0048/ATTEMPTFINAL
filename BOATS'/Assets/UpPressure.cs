@@ -19,7 +19,7 @@ public class UpPressure : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         if (myRB.position.y < maxHeight)
         {
             Vector3 myVector = new Vector3(0.0f, pressure, 0.0f);

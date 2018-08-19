@@ -8,6 +8,8 @@ public class Movement : MonoBehaviour
     public GameObject grabPoint;
     private Rigidbody myBody;
     float moveSpeed = 2.5f;
+    public float carrySpeed = 1.5f;
+    public float maxSpeed = 2.5f;
 
     [SerializeField]
     private GameObject canonBall;
@@ -39,7 +41,7 @@ public class Movement : MonoBehaviour
             {
                 if (hasBall == false)
                 {
-                    moveSpeed = 1.5f;
+                    moveSpeed = carrySpeed;
                     canonBall.transform.position = grabPoint.transform.position;
                     canonBall.GetComponent<Rigidbody>().isKinematic = true;
                     canonBall.transform.parent = grabPoint.transform;
@@ -47,7 +49,7 @@ public class Movement : MonoBehaviour
                 }
                 else
                 {
-                    moveSpeed = 2.5f;
+                    moveSpeed = maxSpeed;
                     canonBall.transform.parent = null;
                     canonBall.GetComponent<Rigidbody>().isKinematic = false;
                     canonBall.GetComponent<Rigidbody>().AddForce(new Vector3(this.transform.forward.x, this.transform.forward.y + 1.5f, this.transform.forward.z), ForceMode.Impulse);
@@ -74,7 +76,7 @@ public class Movement : MonoBehaviour
                 //extra safety here maybe
                 if (hasBall == false)
                 {
-                    moveSpeed = 1.5f;
+                    moveSpeed = carrySpeed;
                     canonBall.transform.position = grabPoint.transform.position;
                     canonBall.GetComponent<Rigidbody>().isKinematic = true;
                     canonBall.transform.parent = grabPoint.transform;
@@ -82,7 +84,7 @@ public class Movement : MonoBehaviour
                 }
                 else
                 {
-                    moveSpeed = 2.5f;
+                    moveSpeed = maxSpeed;
                     canonBall.transform.parent = null;
                     canonBall.GetComponent<Rigidbody>().isKinematic = false;
                     canonBall.GetComponent<Rigidbody>().AddForce(new Vector3(this.transform.forward.x, this.transform.forward.y + 1.5f, this.transform.forward.z), ForceMode.Impulse);
@@ -136,7 +138,7 @@ public class Movement : MonoBehaviour
                 //added for more responsivness so you can hold the spacebar/press it down before it enters the trigger box
                 if (Input.GetKey("space"))
                 {
-                    moveSpeed = 1.5f;
+                    moveSpeed = carrySpeed;
                     canonBall.transform.position = grabPoint.transform.position;
                     canonBall.GetComponent<Rigidbody>().isKinematic = true;
                     canonBall.transform.parent = grabPoint.transform;

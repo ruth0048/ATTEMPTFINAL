@@ -6,6 +6,7 @@ public class CannonBall : MonoBehaviour {
 
     public CannonBallsFall ball;
     private AudioManager myAudio;
+    public GameObject MenuManagerCanvas;
 
     private void Awake()
     {
@@ -22,14 +23,17 @@ public class CannonBall : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag=="water")
+        if (MenuManagerCanvas.GetComponent<GameMenuManager>().end == false)
         {
-            myAudio.Play("Splash");
-            gameObject.layer = 0;
-        }
-        else
-        {
-            myAudio.Play("Hit");
+            if (collision.gameObject.tag == "water")
+            {
+                myAudio.Play("Splash");
+                gameObject.layer = 0;
+            }
+            if(collision.gameObject.tag =="boat")
+            {
+                myAudio.Play("Hit");
+            }
         }
     }
 }
