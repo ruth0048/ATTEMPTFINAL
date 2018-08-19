@@ -43,7 +43,7 @@ public class Movement : MonoBehaviour
                 moveSpeed = 2.5f;
                 canonBall.transform.parent = null;
                 canonBall.GetComponent<Rigidbody>().isKinematic = false;
-                canonBall.GetComponent<Rigidbody>().AddForce(new Vector3(this.transform.forward.x, this.transform.forward.y + 3.0f, this.transform.forward.z), ForceMode.Impulse);
+                canonBall.GetComponent<Rigidbody>().AddForce(new Vector3(this.transform.forward.x, this.transform.forward.y + 1.5f, this.transform.forward.z), ForceMode.Impulse);
                 canonBall = null;
                 hasBall = false;
             }

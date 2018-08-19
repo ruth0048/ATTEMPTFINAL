@@ -18,8 +18,9 @@ public class CannonBallsFall : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-            frequency -= Time.deltaTime;
-            if (frequency < 0.0f)
+        frequency -= Time.deltaTime;
+
+        if (frequency < 0.0f)
             {
             float randXpos = Random.Range(this.transform.position.x -RangeX, this.transform.position.x + RangeX);
                 float randZPos = Random.Range(this.transform.position.z - RangeZ, this.transform.position.z +  RangeZ);
