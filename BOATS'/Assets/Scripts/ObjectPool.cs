@@ -50,6 +50,10 @@ public class ObjectPool : MonoBehaviour
         //if there's room to add an object to the pool, add it back to available.
         if(AvailableObjects.Count < MaxNumObjects)
         {
+            if (obj.GetComponent<Rigidbody>() == true)
+            {
+                obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            }
             obj.SetActive(false);
             AvailableObjects.Add(obj);
             ActiveObjects.Remove(obj);

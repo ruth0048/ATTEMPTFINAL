@@ -38,7 +38,10 @@ public class FallingCannonBallsLevel : MonoBehaviour
             float randXpos = Random.Range(this.transform.position.x - RangeX, this.transform.position.x + RangeX);
             float randZPos = Random.Range(this.transform.position.z - RangeZ, this.transform.position.z + RangeZ);
 
-            cannonBalls.GetAvailableObject().transform.position = new Vector3(randXpos, this.transform.position.y, randZPos);
+            GameObject bleh = cannonBalls.GetAvailableObject();
+            bleh.transform.position = new Vector3(randXpos, this.transform.position.y, randZPos);
+            bleh.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
             frequency = frequencyTimer;
             myAudio.Play("Shoot");
         }
