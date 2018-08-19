@@ -1037,7 +1037,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282840810}
   m_LocalRotation: {x: 0.26459274, y: -0.016266318, z: 0.004463693, w: 0.9642128}
-  m_LocalPosition: {x: 33.612698, y: -5.29, z: 78.772316}
+  m_LocalPosition: {x: 33.612698, y: -5.29, z: 47.58251}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1583399478}
@@ -1094,11 +1094,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 0d1d7ec1e055b1247889d2468bc00826, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.67
+      value: -5.95
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 0d1d7ec1e055b1247889d2468bc00826, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 79.91
+      value: 49.46
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 0d1d7ec1e055b1247889d2468bc00826, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1734,9 +1734,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460f2e753ecd62e419ff751b74de9c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 2
-  Acceleration: 2
-  RotationSpeed: 2
+  MoveSpeed: 1.5
+  Acceleration: 1.5
+  RotationSpeed: 1.5
   Size: {x: 0, y: 0, z: 0}
   GoesIdle: 0
   Idle: 0
@@ -2226,7 +2226,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a76eea9112cf6824e8b0071329cbe631, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 81.68981
+      value: 50.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a76eea9112cf6824e8b0071329cbe631, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2548,7 +2548,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 881596982}
   m_LocalRotation: {x: -0, y: 0.058609415, z: -0, w: 0.998281}
-  m_LocalPosition: {x: 28.72, y: -4, z: 90.05}
+  m_LocalPosition: {x: 28.72, y: -4, z: 58.86019}
   m_LocalScale: {x: 0.79, y: 0.79, z: 0.79}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4397,9 +4397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460f2e753ecd62e419ff751b74de9c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 2
-  Acceleration: 2
-  RotationSpeed: 2
+  MoveSpeed: 1.5
+  Acceleration: 1.5
+  RotationSpeed: 1.5
   Size: {x: 0, y: 0, z: 0}
   GoesIdle: 0
   Idle: 0
@@ -4551,6 +4551,10 @@ Prefab:
     - target: {fileID: 400016, guid: dcd2eb548113d1c468184ca9ac0a1c0f, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: dcd2eb548113d1c468184ca9ac0a1c0f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcd2eb548113d1c468184ca9ac0a1c0f, type: 3}
@@ -5080,7 +5084,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1814212611}
   m_LocalRotation: {x: -0, y: 0.058609415, z: -0, w: 0.998281}
-  m_LocalPosition: {x: 34.84, y: -7.6, z: 87.73}
+  m_LocalPosition: {x: 34.84, y: -7.6, z: 56.54019}
   m_LocalScale: {x: 0.79, y: 0.79, z: 0.79}
   m_Children: []
   m_Father: {fileID: 0}
