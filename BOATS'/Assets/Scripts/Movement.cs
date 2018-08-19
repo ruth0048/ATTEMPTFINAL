@@ -71,6 +71,7 @@ public class Movement : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Return) && canonBall != null)
             {
+                //extra safety here maybe
                 if (hasBall == false)
                 {
                     moveSpeed = 1.5f;
@@ -129,7 +130,7 @@ public class Movement : MonoBehaviour
     {
         if (other.tag == "ball"&&canonBall==null)
         {
-            if (hasBall == false)
+            if (hasBall == false &&other.transform.parent==null)
             {
                 canonBall = other.gameObject;
                 //added for more responsivness so you can hold the spacebar/press it down before it enters the trigger box
