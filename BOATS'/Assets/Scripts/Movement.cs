@@ -92,6 +92,10 @@ public class Movement : MonoBehaviour
                     hasBall = false;
                 }
             }
+            if (this.transform.position.y < -10)
+            {
+                this.transform.position = playerSpawn.transform.position;
+            }
         }
     }
 
