@@ -56,7 +56,7 @@ public class ShipMovement : MonoBehaviour {
                 //have ai turn to its destination, and have it move towards it
                 TurnToDestination(this.transform.position, CurrentDestination);
 
-                if (Vector3.Distance(transform.forward, (CurrentDestination - transform.localPosition).normalized) < DistanceBetweenAngles || this.CurvedTurns)
+                if (Vector3.Distance(transform.forward, (CurrentDestination - transform.position).normalized) < DistanceBetweenAngles || this.CurvedTurns)
                 {
                     transform.position += transform.forward * MoveSpeed * Time.deltaTime;
                 }
