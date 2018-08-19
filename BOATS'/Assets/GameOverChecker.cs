@@ -14,6 +14,9 @@ public class GameOverChecker : MonoBehaviour {
     private bool canSpawn = true;
     public GameObject lose;
     private AudioManager myAudio;
+
+    bool playOnce = false; 
+
     void Start () {
         myAudio = FindObjectOfType<AudioManager>();
     }
@@ -50,7 +53,11 @@ public class GameOverChecker : MonoBehaviour {
             {
                 Debug.LogWarning("GameOver");
                 myAudio.Stop("Music");
-                myAudio.Play("Lose");
+                if (!playOnce)
+                {
+                    myAudio.Play("Lose");
+                    playOnce = true;
+                }
                 lose.GetComponent<GameMenuManager>().onLose();
             }
         }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class WinChecker : MonoBehaviour {
     public GameObject win;
     private AudioManager myAudio;
+    bool playOnce = false;
     //private bool win = false;
     private void Awake()
     {
@@ -23,7 +24,11 @@ public class WinChecker : MonoBehaviour {
         if(other.gameObject.tag=="boat")
         {
             myAudio.Stop("Music");
-            myAudio.Play("Win");
+            if (!playOnce)
+            {
+                myAudio.Play("Win");
+                playOnce = true;
+            }
             win.gameObject.GetComponent<GameMenuManager>().onWin();
             Debug.LogWarning("WIN");
         }

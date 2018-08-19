@@ -38,6 +38,7 @@ public class MenuManager : MonoBehaviour {
     public void OnPlayTwo()
     {
         //load 2 player scene.
+        SceneManager.LoadScene(2);
     }
 
     public void OnExitButton()
