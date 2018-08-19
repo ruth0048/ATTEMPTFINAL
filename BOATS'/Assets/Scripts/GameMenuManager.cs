@@ -9,18 +9,9 @@ public class GameMenuManager : MonoBehaviour {
     public GameObject LoseScreen;
     public GameObject retryButton;
     public GameObject menuButton;
-    public bool win;
-    public bool lose;
+    public bool end;
     private void Update()
     {
-        if(win == true)
-        {
-            onWin();
-        }
-        if(lose == true)
-        {
-            onLose();
-        }
     }
 
     public void OnRetryPressed()
@@ -48,6 +39,7 @@ public class GameMenuManager : MonoBehaviour {
 
         retryButton.SetActive(true);
         menuButton.SetActive(true);
+        end = true;
     }
 
     //same as above.
@@ -58,5 +50,6 @@ public class GameMenuManager : MonoBehaviour {
 
         retryButton.SetActive(true);
         menuButton.SetActive(true);
+        end = true;
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FallingCannonBallsLevel : MonoBehaviour
 {
+    public GameObject MenuManagerCanvas;
     public ObjectPool cannonBalls;
     public float RangeX;
     public float RangeZ;
@@ -27,23 +28,26 @@ public class FallingCannonBallsLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckDifficulty();
-
-        //update frequency
-        frequency -= Time.deltaTime;
-
-        //spawn based on frequency
-        if (frequency < 0.0f)
+        if (MenuManagerCanvas.GetComponent<GameMenuManager>().end == false )
         {
-            float randXpos = Random.Range(this.transform.position.x - RangeX, this.transform.position.x + RangeX);
-            float randZPos = Random.Range(this.transform.position.z - RangeZ, this.transform.position.z + RangeZ);
+            CheckDifficulty();
 
-            GameObject bleh = cannonBalls.GetAvailableObject();
-            bleh.transform.position = new Vector3(randXpos, this.transform.position.y, randZPos);
-            bleh.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            //update frequency
+            frequency -= Time.deltaTime;
 
-            frequency = frequencyTimer;
-            myAudio.Play("Shoot");
+            //spawn based on frequency
+            if (frequency < 0.0f)
+            {
+                float randXpos = Random.Range(this.transform.position.x - RangeX, this.transform.position.x + RangeX);
+                float randZPos = Random.Range(this.transform.position.z - RangeZ, this.transform.position.z + RangeZ);
+
+                GameObject bleh = cannonBalls.GetAvailableObject();
+                bleh.transform.position = new Vector3(randXpos, this.transform.position.y, randZPos);
+                bleh.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+                frequency = frequencyTimer;
+                myAudio.Play("Shoot");
+            }
         }
     }
 
