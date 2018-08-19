@@ -712,7 +712,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 339148370}
+      - m_Target: {fileID: 339148371}
         m_MethodName: OnRetryPressed
         m_Mode: 1
         m_Arguments:
@@ -1701,7 +1701,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 339148370}
+      - m_Target: {fileID: 339148371}
         m_MethodName: OnMenuPress
         m_Mode: 1
         m_Arguments:
@@ -1949,6 +1949,7 @@ GameObject:
   - component: {fileID: 339148367}
   - component: {fileID: 339148366}
   - component: {fileID: 339148370}
+  - component: {fileID: 339148371}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2044,6 +2045,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6a64fc08ecaafc4b844ac9e43f7585e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &339148371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 339148365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6fa5324960947b4eb97d2586fd089f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   WinScreen: {fileID: 906414991}
