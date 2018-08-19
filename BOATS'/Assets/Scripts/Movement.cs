@@ -7,13 +7,16 @@ public class Movement : MonoBehaviour
 
     public GameObject grabPoint;
     private Rigidbody myBody;
-    float moveSpeed = 2.0f;
+    float moveSpeed = 2.5f;
 
     [SerializeField]
     private GameObject canonBall;
     private Vector3 lastRotation;
     bool hasBall = false;
     bool MovementIsHappening = false;
+
+    public bool player1 = false;
+    public bool player2 = false;
 
     void Start()
     {
@@ -23,29 +26,61 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        //MovementChecker();
-        RotatePlayer();
-
-        myBody.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, myBody.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
-
-        if (Input.GetKeyDown("space") && canonBall != null)
+        if (player1 == true)
         {
-            if (hasBall == false)
+            //MovementChecker();
+            RotatePlayer();
+
+            myBody.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, myBody.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
+
+            if (Input.GetKeyDown("space") && canonBall != null)
             {
-                moveSpeed = 1.5f;
-                canonBall.transform.position = grabPoint.transform.position;
-                canonBall.GetComponent<Rigidbody>().isKinematic = true;
-                canonBall.transform.parent = grabPoint.transform;
-                hasBall = true;
+                if (hasBall == false)
+                {
+                    moveSpeed = 1.5f;
+                    canonBall.transform.position = grabPoint.transform.position;
+                    canonBall.GetComponent<Rigidbody>().isKinematic = true;
+                    canonBall.transform.parent = grabPoint.transform;
+                    hasBall = true;
+                }
+                else
+                {
+                    moveSpeed = 2.5f;
+                    canonBall.transform.parent = null;
+                    canonBall.GetComponent<Rigidbody>().isKinematic = false;
+                    canonBall.GetComponent<Rigidbody>().AddForce(new Vector3(this.transform.forward.x, this.transform.forward.y + 1.5f, this.transform.forward.z), ForceMode.Impulse);
+                    canonBall = null;
+                    hasBall = false;
+                }
             }
-            else
+        }
+
+        if (player2 == true)
+        {
+            //MovementChecker();
+            RotatePlayer();
+
+            myBody.velocity = new Vector3(Input.GetAxis("2Horizontal") * moveSpeed, myBody.velocity.y, Input.GetAxis("2Vertical") * moveSpeed);
+
+            if (Input.GetKeyDown(KeyCode.Return) && canonBall != null)
             {
-                moveSpeed = 2.5f;
-                canonBall.transform.parent = null;
-                canonBall.GetComponent<Rigidbody>().isKinematic = false;
-                canonBall.GetComponent<Rigidbody>().AddForce(new Vector3(this.transform.forward.x, this.transform.forward.y + 1.5f, this.transform.forward.z), ForceMode.Impulse);
-                canonBall = null;
-                hasBall = false;
+                if (hasBall == false)
+                {
+                    moveSpeed = 1.5f;
+                    canonBall.transform.position = grabPoint.transform.position;
+                    canonBall.GetComponent<Rigidbody>().isKinematic = true;
+                    canonBall.transform.parent = grabPoint.transform;
+                    hasBall = true;
+                }
+                else
+                {
+                    moveSpeed = 2.5f;
+                    canonBall.transform.parent = null;
+                    canonBall.GetComponent<Rigidbody>().isKinematic = false;
+                    canonBall.GetComponent<Rigidbody>().AddForce(new Vector3(this.transform.forward.x, this.transform.forward.y + 1.5f, this.transform.forward.z), ForceMode.Impulse);
+                    canonBall = null;
+                    hasBall = false;
+                }
             }
         }
     }
