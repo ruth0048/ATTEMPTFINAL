@@ -90,6 +90,15 @@ public class Movement : MonoBehaviour
             if (hasBall == false)
             {
                 canonBall = other.gameObject;
+                //added for more responsivness so you can hold the spacebar/press it down before it enters the trigger box
+                if (Input.GetKey("space"))
+                {
+                    moveSpeed = 1.5f;
+                    canonBall.transform.position = grabPoint.transform.position;
+                    canonBall.GetComponent<Rigidbody>().isKinematic = true;
+                    canonBall.transform.parent = grabPoint.transform;
+                    hasBall = true;
+                }
             }
         }
     }

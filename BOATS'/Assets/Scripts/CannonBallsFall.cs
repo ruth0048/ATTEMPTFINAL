@@ -28,4 +28,12 @@ public class CannonBallsFall : MonoBehaviour {
                 frequency = startFrequency;
             }
 	}
+
+    public void Spawn()
+    {
+        float randXpos = Random.Range(this.transform.position.x - RangeX, this.transform.position.x + RangeX);
+        float randZPos = Random.Range(this.transform.position.z - RangeZ, this.transform.position.z + RangeZ);
+
+        cannonBalls.GetAvailableObject().transform.position = new Vector3(randXpos, this.transform.position.y, randZPos);
+    }
 }
