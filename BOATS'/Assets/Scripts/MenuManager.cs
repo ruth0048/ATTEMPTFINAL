@@ -15,6 +15,7 @@ public class MenuManager : MonoBehaviour {
 
     public GameObject CreditsImage;
     public GameObject ConrtolsImage;
+    public GameObject MenuImage;
 
 	void Start ()
     {
@@ -56,6 +57,7 @@ public class MenuManager : MonoBehaviour {
         backFromControlsButton.SetActive(false);
         CreditsImage.SetActive(true);
         ConrtolsImage.SetActive(false);
+        MenuImage.SetActive(false);
     }
 
     public void OnControlsButton()
@@ -70,6 +72,7 @@ public class MenuManager : MonoBehaviour {
         backFromControlsButton.SetActive(true);
         CreditsImage.SetActive(false);
         ConrtolsImage.SetActive(true);
+        MenuImage.SetActive(false);
     }
 
     public void OnBackFromCredits()
@@ -84,6 +87,7 @@ public class MenuManager : MonoBehaviour {
         backFromControlsButton.SetActive(false);
         CreditsImage.SetActive(false);
         ConrtolsImage.SetActive(false);
+        MenuImage.SetActive(true);
 
     }
 
@@ -99,5 +103,6 @@ public class MenuManager : MonoBehaviour {
         backFromControlsButton.SetActive(false);
         CreditsImage.SetActive(false);
         ConrtolsImage.SetActive(false);
+        MenuImage.SetActive(true);
     }
 }
