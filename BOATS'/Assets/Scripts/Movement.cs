@@ -18,6 +18,8 @@ public class Movement : MonoBehaviour
     public bool player1 = false;
     public bool player2 = false;
 
+    public GameObject playerSpawn;
+
     void Start()
     {
         myBody = GetComponent<Rigidbody>();
@@ -52,6 +54,11 @@ public class Movement : MonoBehaviour
                     canonBall = null;
                     hasBall = false;
                 }
+            }
+
+            if(this.transform.position.y < -10)
+            {
+                this.transform.position = playerSpawn.transform.position;
             }
         }
 

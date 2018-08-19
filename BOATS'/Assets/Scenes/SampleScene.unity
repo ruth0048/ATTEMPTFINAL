@@ -2022,6 +2022,7 @@ MonoBehaviour:
   canonBall: {fileID: 0}
   player1: 1
   player2: 0
+  playerSpawn: {fileID: 1598329440}
 --- !u!135 &386852676
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2462,6 +2463,7 @@ MonoBehaviour:
   canonBall: {fileID: 0}
   player1: 0
   player2: 0
+  playerSpawn: {fileID: 0}
 --- !u!4 &516239272 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 0d1d7ec1e055b1247889d2468bc00826, type: 3}
@@ -6266,6 +6268,7 @@ MonoBehaviour:
   canonBall: {fileID: 0}
   player1: 0
   player2: 0
+  playerSpawn: {fileID: 0}
 --- !u!135 &1471350211
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6858,6 +6861,34 @@ Transform:
   - {fileID: 690992578}
   m_Father: {fileID: 138006591}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1598329440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1598329441}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1598329441
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1598329440}
+  m_LocalRotation: {x: -0, y: -0.007094602, z: -0, w: 0.99997485}
+  m_LocalPosition: {x: 33.630383, y: -5.73, z: 50.5}
+  m_LocalScale: {x: 0.79, y: 0.79, z: 0.79}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1611224261
 GameObject:
