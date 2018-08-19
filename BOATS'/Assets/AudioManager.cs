@@ -5,18 +5,18 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour {
 
     public Sound[] sounds;
-    public static AudioManager instance;
+    //public static AudioManager instance;
     // Use this for initialization
     void Awake () {
 
-        if (instance == null)
-            instance = this;
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);
+        //if (instance == null)
+        //    instance = this;
+        //else
+        //{
+        //    Destroy(gameObject);
+        //    return;
+        //}
+
 
         foreach (Sound s in sounds)
         {
