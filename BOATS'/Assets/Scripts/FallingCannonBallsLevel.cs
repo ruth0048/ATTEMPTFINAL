@@ -71,7 +71,7 @@ public class FallingCannonBallsLevel : MonoBehaviour
                 if (difficultyTime < 0.0f)
                 {
                     difficulty++;
-                    difficultyTime = 6.0f;
+                    difficultyTime = 10.0f;
                 }
                 break;
             case 2:
@@ -79,15 +79,15 @@ public class FallingCannonBallsLevel : MonoBehaviour
                 if (difficultyTime < 0.0f)
                 {
                     difficulty++;
-                    difficultyTime = 6.0f;
+                    difficultyTime = 15.0f;
                 }
                 break;
             case 3:
-                frequencyTimer = 2.5f;
+                frequencyTimer = 3.0f;
                 if (difficultyTime < 0.0f)
                 {
                     difficulty++;
-                    difficultyTime = 6.0f;
+                    difficultyTime = 10.0f;
                 }
                 break;
             case 4:
@@ -95,15 +95,15 @@ public class FallingCannonBallsLevel : MonoBehaviour
                 if (difficultyTime < 0.0f)
                 {
                     difficulty++;
-                    difficultyTime = 6.0f;
+                    difficultyTime = 10.0f;
                 }
                 break;
             case 5:
-                frequencyTimer = 2.0f;
+                frequencyTimer = 2.75f;
                 if (difficultyTime < 0.0f)
                 {
                     difficulty++;
-                    difficultyTime = 6.0f;
+                    difficultyTime = 10.0f;
                 }
                 break;
             case 6:
@@ -115,7 +115,7 @@ public class FallingCannonBallsLevel : MonoBehaviour
                 }
                 break;
             case 7:
-                frequencyTimer = 1.5f;
+                frequencyTimer = 2.0f;
                 if (difficultyTime < 0.0f)
                 {
                     difficulty++;
