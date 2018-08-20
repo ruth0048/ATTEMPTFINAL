@@ -5,7 +5,7 @@ using UnityEngine;
 public class UpPressure : MonoBehaviour {
 
     private Rigidbody myRB;
-    private float maxHeight;//=1.25f
+    public float maxHeight;//=1.25f
     public float pressure=10.0f;
 
     //lowest point variable?
@@ -30,5 +30,16 @@ public class UpPressure : MonoBehaviour {
             Vector3 otherVec = new Vector3(myRB.position.x, maxHeight, myRB.position.z);
             myRB.MovePosition(otherVec);
         }
-	}
+        //if(Input.GetKeyDown(KeyCode.E))
+        //{
+        //    pressure = 5.0f;
+        //}
+
+        //if (Input.GetKeyUp(KeyCode.E))
+        //{
+        //    pressure = 10.0f;
+        //}
+        ////maxHeight += Mathf.Sin(transform.position.x + Time.deltaTime) * (Mathf.Cos(45));
+        ////maxHeight += Mathf.Cos(transform.position.z + Time.deltaTime) * Mathf.Cos(45);
+    }
 }

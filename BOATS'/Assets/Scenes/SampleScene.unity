@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7052c9a1160c93d47867686e87968d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHeight: 0
   pressure: 10
 --- !u!54 &20826757
 Rigidbody:
@@ -3166,6 +3167,7 @@ MonoBehaviour:
   player2: {fileID: 516239270}
   waterMover: {fileID: 664666322}
   island: {fileID: 1576627078}
+  propeller: {fileID: 1349219016}
 --- !u!65 &693556389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3926,6 +3928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7052c9a1160c93d47867686e87968d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHeight: 0
   pressure: 10
 --- !u!54 &838358508
 Rigidbody:
@@ -5110,6 +5113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7052c9a1160c93d47867686e87968d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHeight: 0
   pressure: 10
 --- !u!54 &1246701163
 Rigidbody:
@@ -5647,6 +5651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7052c9a1160c93d47867686e87968d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHeight: 0
   pressure: 10
 --- !u!54 &1324130334
 Rigidbody:
@@ -6834,6 +6839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7052c9a1160c93d47867686e87968d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHeight: 0
   pressure: 10
 --- !u!54 &1475145378
 Rigidbody:
@@ -7156,8 +7162,8 @@ MonoBehaviour:
   Size: {x: 0, y: 0, z: 0}
   GoesIdle: 0
   Idle: 1
-  IdleTimer: 90
-  IdleTime: 52
+  IdleTimer: 0
+  IdleTime: 0
   StuckTimer: 0
   CurvedTurns: 0
   DistanceWhenArrived: 0.1
@@ -7531,6 +7537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7052c9a1160c93d47867686e87968d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHeight: 0
   pressure: 10
 --- !u!54 &1670650553
 Rigidbody:
@@ -8600,6 +8607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7052c9a1160c93d47867686e87968d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHeight: 0
   pressure: 10
 --- !u!54 &1917881697
 Rigidbody:
@@ -9929,6 +9937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7052c9a1160c93d47867686e87968d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHeight: 0
   pressure: 10
 --- !u!54 &2138350078
 Rigidbody:
